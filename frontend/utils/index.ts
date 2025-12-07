@@ -111,7 +111,12 @@ const uploadFile2R2 = async (
         continue;
       }
 
-      result.push(uploadResult.url);
+      // 如果是相对路径，拼接上后端域名
+        const fullUrl = uploadResult.url.startsWith('/')
+          ? `${config.public.apiBase}${uploadResult.url}`
+          : uploadResult.url;
+
+        result.push(fullUrl);
     } catch (e) {
       toast.error(`上传图片失败, ${e}`);
     }
