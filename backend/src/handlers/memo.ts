@@ -16,12 +16,12 @@ export async function listMemos(request: Request, env: Env, ctx: AppContext): Pr
     // Visibility filter
     if (!ctx.user) {
       conditions.push('showType = 1');
-      conditions.push('createdAt <= ?');
+      conditions.push('datetime(createdAt) <= datetime(?)');
       params.push(new Date().toISOString());
     } else {
       conditions.push('(userId = ? OR (userId <> ? AND showType = 1))');
       params.push(ctx.user.id, ctx.user.id);
-      conditions.push('(userId = ? OR createdAt <= ?)');
+      conditions.push('(userId = ? OR datetime(createdAt) <= datetime(?))');
       params.push(ctx.user.id, new Date().toISOString());
     }
 
