@@ -84,10 +84,7 @@ const doComment = async (token?: string) => {
   await useMyFetch(`/comment/add`, {...state, token:token})
   toast.success("评论成功!")
   currentCommentBox.value = ''
-  state.username = ''
-  state.content = ''
-  state.website = ''
-  state.email = ''
+  state.content = ''  // 只清空评论内容，保留用户信息方便下次使用
   memoChangedEvent.emit(props.memoId)
 }
 
