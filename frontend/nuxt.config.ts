@@ -42,12 +42,14 @@ export default defineNuxtConfig({
                 { charset: "utf-8" },
             ],
             link: [
-                {href: `/css/APlayer.min.css`, rel: 'stylesheet'},
+                { href: `/css/APlayer.min.css`, rel: 'stylesheet' },
+                { href: `/css/netease-mini-player-v2.css`, rel: 'stylesheet' },
             ],
             script: [
                 {src: `/js/APlayer.min.js`, type: 'text/javascript', async: true, defer: true},
                 {src: `/js/Meting.min.js`, type: 'text/javascript', async: true, defer: true},
-                {src: `/js/main.js`, type: 'text/javascript', async: true, defer: true},
+                { src: `/js/main.js`, type: 'text/javascript', async: true, defer: true },
+                {src: `/js/netease-mini-player-v2.js`, type: 'text/javascript', async: true, defer: true},
             ]
         }
     },

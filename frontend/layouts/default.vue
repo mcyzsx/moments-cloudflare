@@ -6,6 +6,15 @@
     <Footer />
   </div>
 
+  <div class="netease-mini-player"
+     data-playlist-id="14273792576"
+     data-embed="false"
+     data-position="bottom-right"
+     data-lyric="true"
+     data-theme="auto"
+     data-default-minimized="true"
+></div>
+
   <div
     title="到顶部"
     v-if="y > 200"
