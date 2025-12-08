@@ -102,9 +102,7 @@ useHead({
       type: "application/rss+xml",
       title: "我的 RSS 订阅",
       href: sysConfigVO.rss || `/rss`,
-      },
-        /* ✅ 网易云 Mini 播放器 CSS */
-    { rel: 'stylesheet', href: '/css/netease-mini-player-v2.css' },
+    },
   ],
   style: [
     {
@@ -115,8 +113,7 @@ useHead({
     {
       type: "text/javascript",
       innerHTML: sysConfigVO.js || "",
-      },
-    { src: '/js/netease-mini-player-v2.js', type: 'text/javascript', defer: true }
+    },
   ],
 });
 
