@@ -7,7 +7,7 @@
   </div>
 
   <div class="netease-mini-player"
-     data-playlist-id="14273792576"
+     data-playlist-id="13681647281"
      data-embed="false"
      data-position="bottom-right"
      data-lyric="true"
