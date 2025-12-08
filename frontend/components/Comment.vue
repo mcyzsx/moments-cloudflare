@@ -1,18 +1,18 @@
 <template>
   <div>
     <span v-if="props.comment.author == props.memoUserId" class="text-[#576b95] text-nowrap">
-      {{ props.comment.username }}
+      {{ props.comment.username || '匿名' }}
       <UBadge color="gray" variant="solid" size="xs">作者</UBadge>
     </span>
     <span v-else class="text-[#576b95] text-nowrap">
       <a v-if="props.comment.website" :href="formatWebsite(props.comment.website)" target="_blank">
-        {{ props.comment.username }}
+        {{ props.comment.username || '匿名' }}
       </a>
-      <span v-else>{{ props.comment.username }}</span>
+      <span v-else>{{ props.comment.username || '匿名' }}</span>
     </span>
    <template v-if="props.comment.replyTo">
      <span class="mx-1">回复</span>
-     <span  class="text-[#576b95] text-nowrap">{{props.comment.replyTo}}</span>
+     <span  class="text-[#576b95] text-nowrap">{{ props.comment.replyTo || '匿名' }}</span>
    </template>
     <span class="mx-0.5">:</span>
     <span class="inline break-all cursor-pointer" @click="toggle">{{ props.comment.content }}</span>
@@ -24,7 +24,7 @@
     </span>
     
   </div>
-  <CommentBox :memo-id="props.memoId" :reply-to="props.comment.username" :comment-id="props.comment.id" :reply-email="props.comment.email"/>
+  <CommentBox :memo-id="props.memoId" :reply-to="props.comment.username || '匿名'" :comment-id="props.comment.id" :reply-email="props.comment.email"/>
 </template>
 
 <script setup lang="ts">

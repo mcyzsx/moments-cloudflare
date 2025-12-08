@@ -113,6 +113,10 @@ app.post('/api/memo/removeImage', async (c) => {
   return memoHandler.removeImage(c.req.raw, c.env, ctx);
 });
 
+app.post('/api/memo/getFaviconAndTitle', async (c) => {
+  return memoHandler.getFaviconAndTitle(c.req.raw, c.env);
+});
+
 app.post('/api/memo/getDoubanBookInfo', async (c) => {
   const id = c.req.query('id') || '';
   return doubanHandler.getDoubanBookInfo(c.req.raw, c.env, id);
@@ -182,7 +186,7 @@ app.post('/api/tag/list', async (c) => {
 
 // Health check
 app.get('/', (c) => {
-  return c.json({ message: 'Moments API is running', version: '1.0.0' });
+  return c.json({ message: 'Moments API is running', version: '1.0.2' });
 });
 
 export default app;
