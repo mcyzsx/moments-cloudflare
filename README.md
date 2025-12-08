@@ -77,8 +77,9 @@ database_id = "你的-database-id"  # 替换这里
 # 本地测试环境
 wrangler d1 execute moments-db --local --file=./schema.sql
 ```
-# 生产环境
+
 ```bash
+# 生产环境
 wrangler d1 execute moments-db --remote --file=./schema.sql
 ```
 
@@ -95,7 +96,7 @@ wrangler r2 bucket create moments-storage
 ```toml
 [vars]
 JWT_SECRET = "your-secret-key-change-this"  # 改成你的密钥
-CORS_ORIGIN = "https://your-frontend-domain.pages.dev"  # 改成你的前端域名
+CORS_ORIGIN = "*" # 根据需要设置前端地址,也可保持通配符
 ```
 
 #### 5. 安装依赖并部署
@@ -154,12 +155,7 @@ wrangler pages deploy .output/public --project-name=moments-frontend
 
 ## 使用指南
 
-### 注册第一个用户
-
-1. 访问前端网站
-2. 点击 **注册**
-3. 输入用户名（至少3个字符）和密码
-4. 注册成功后登录
+### 默认管理员账号
 
 > **注意**: 默认用户名为 `admin`，密码为 `admin123`，请尽快修改密码。
 
@@ -268,6 +264,12 @@ Cloudflare 提供慷慨的免费额度：
 - 图片上传到 R2
 - 响应式设计
 - 友链管理
+- 豆瓣影片/书籍数据抓取
+- 在线音乐解析
+- 在线视频解析
+- Markdown 支持
+- 评论邮件通知
+
 ### 🚧 计划中
 
 ## 故障排查
