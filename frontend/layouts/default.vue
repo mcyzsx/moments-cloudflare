@@ -9,7 +9,7 @@
   <div class="netease-mini-player"
      data-playlist-id="13681647281"
      data-embed="false"
-     data-position="bottom-right"
+     data-position="bottom-left"
      data-lyric="true"
      data-theme="auto"
      data-default-minimized="true"
